@@ -1,0 +1,10 @@
+export { default as strategy } from "./strategy.jpg";
+export { default as consulting } from "./consulting.jpg";
+export { default as consulting2 } from "./consulting2.jpg";
+export { default as technology } from "./technology.jpg";
+export { default as technology2 } from "./technology2.jpg";
+export { default as innovation } from "./innovation.jpg";
+export { default as marketing } from "./marketing.jpg";
+export { default as marketing2 } from "./marketing2.jpg";
+export { default as fitness } from "./fitness.jpg";
+export { default as fitness2 } from "./fitness2.jpg";

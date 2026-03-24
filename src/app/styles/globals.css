@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #fff;
+  --primary: #111827;
+  --accent: #6366F1;
+  --accent-hover: #4F46E5;
+}
+
+.dark {
+  --bg: #0e1531;
+  --primary: #fff;
+  --accent: #818CF8;
+  --accent-hover: #4F46E5;
+}
+
+::selection {
+  background-color: var(--accent);
+  color: #fff;
+}
+
+html {
+  @apply relative; /* fix Framer Motion useScroll offset calculation */
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+/* .duration-300 {
+  transition-duration: 3s;
+} */
+
+@layer base {
+  h1 {
+    @apply text-5xl font-medium leading-tight;
+  }
+  h2 {
+    @apply text-4xl font-bold leading-tight;
+  }
+  h3 {
+    @apply text-2xl font-bold;
+  }
+  h4 {
+    @apply text-xl font-bold;
+  }
+  h5 {
+    @apply text-lg font-bold;
+  }
+  h6 {
+    @apply text-sm font-bold tracking-wider text-accent uppercase mb-2 transition-colors duration-300;
+  }
+  p {
+    @apply text-gray-500;
+  }
+}
+
+#projects {
+  .group {
+    position: relative;
+    perspective: 1200px;
+    transform-style: preserve-3d;
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      transform: translateZ(112px);
+    }
+  }
+  .card3d {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform .7s cubic-bezier(.22,1,.36,1), filter .3s;
+  }
+  .group:hover .card3d {
+    transform: rotateX(90deg);
+  }
+  .face {
+    position: absolute;
+    inset: 0;
+    backface-visibility: hidden;
+    pointer-events: none;
+  }
+  .front {
+    transform: translateZ(112px);
+  }
+  .back {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transform: rotateX(-90deg) translateZ(112px);
+  }
+}
