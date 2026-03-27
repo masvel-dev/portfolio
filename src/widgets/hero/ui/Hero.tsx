@@ -30,7 +30,7 @@ export function Hero() {
             </h2>
             <h1 className="mb-1">Frontend developer</h1>
             <h4 className="mb-6">focused on scalable UI systems</h4>
-            <h5 className="text-gray-500 font-medium transition-colors duration-300">
+            <h5 className="text-gray-500 dark:text-gray-300/80 font-medium transition-colors duration-300">
               I build scalable frontend architectures and complex UI systems with focus on performance and maintainability.
             </h5>
             

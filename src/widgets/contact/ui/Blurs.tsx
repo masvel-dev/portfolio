@@ -10,7 +10,7 @@ export function Blurs() {
   return blurs.map((b, i) => (
     <div
       key={i}
-      className={`absolute bg-accent rounded-full ${b.blur} ${b.opacity}`}
+      className={`absolute bg-accent rounded-full transition-colors duration-300 ${b.blur} ${b.opacity}`}
       style={{
         top: b.top,
         left: b.left,

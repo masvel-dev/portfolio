@@ -106,7 +106,7 @@ export function Contact() {
           <p>Have a project in mind or just want to say hello? Feel free to reach out. I'm always open to discussing new ideas, collaborations, or opportunities.</p>
         </div>
 
-        <div className="max-w-xl mx-auto p-10 pt-6 bg-bg rounded-xl border border-gray-100 shadow-lg space-y-8 relative z-10">
+        <div className="max-w-xl mx-auto p-10 pt-6 bg-white dark:bg-white/5 backdrop-blur-xl rounded-xl border border-gray-100 dark:border-white/10 shadow-lg space-y-8 relative z-10 transition-all duration-300">
           <form noValidate onSubmit={handleSubmit} className="space-y-6">
             <InputField
               label="Your Name"
@@ -153,7 +153,7 @@ export function Contact() {
 
         <p className="text-sm text-center py-6">Or email me at:{" "}<a
           href={`mailto:${contacts.email}`}
-          className="text-accent underline hover:no-underline"
+          className="text-accent underline hover:no-underline transition-colors duration-300"
         >{contacts.email}</a></p>
       </div>
     </section>

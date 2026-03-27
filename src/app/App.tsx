@@ -1,24 +1,21 @@
-import { Toaster } from 'react-hot-toast';
+import { Toaster } from "react-hot-toast";
 
-import { Header, Footer, Hero, About, Tech, Experience, Projects, Contact } from "@/widgets";
+import { Header, Footer } from "@/widgets";
+import { HomePage } from "@/pages/home/ui/HomePage";
+// import { PreloaderProvider } from "./providers/PreloaderProvider";
 
 export default function App() {
   return (
-    <div className="relative flex flex-col bg-bg text-primary transition-colors duration-300">
-      <Toaster position="top-center" reverseOrder={false} />
+    // <PreloaderProvider>
+      <div className="relative flex flex-col bg-bg text-primary transition-colors duration-300">
+        <Toaster position="top-center" reverseOrder={false} />
 
-      <Header />
+        <Header />
 
-      <main className="flex-1">
-        <Hero />
-        <About />
-        <Tech />
-        <Experience />
-        <Projects />
-        <Contact />
-      </main>
+        <HomePage />
 
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    // </PreloaderProvider>
   );
 }

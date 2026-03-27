@@ -3,8 +3,7 @@ import { Link as ScrollLink } from "react-scroll";
 
 import { useHeaderScroll } from "../model/useHeaderScroll";
 
-import { LanguageToggle } from "./LanguageToggle";
-import { ThemeToggle } from "./ThemeToggle";
+import { ThemeSwitcher } from "@/shared/ui/theme-switcher/ThemeSwitcher";
 
 import Logo from "./Logo";
 
@@ -21,9 +20,9 @@ export function Header() {
   const isTop = scrollY < 50;
   const isHidden = direction === "down" && scrollY > 100;
 
-  const base = "fixed top-0 left-0 w-full z-50 transition-all duration-300 transform-gpu will-change-transform";
+  const base = "fixed top-0 left-0 w-full z-50 transition-[transform,background-color,box-shadow,backdrop-filter] duration-300 transform-gpu will-change-transform"; // pr-[var(--scrollbar-width)]
   const transform = isHidden ? "-translate-y-full" : "translate-y-0";
-  const style = isTop ? "bg-transparent shadow-none" : "bg-white/85 backdrop-blur-md shadow-md";
+  const style = isTop ? "bg-transparent shadow-none" : "bg-white/85 dark:bg-[#121a3a]/80 backdrop-blur-md shadow-md dark:shadow-black/30";
 
   return (
     <header className={`${base} ${transform} ${style}`}>
@@ -52,9 +51,10 @@ export function Header() {
                     before:content-['']
                     before:absolute before:left-1 before:bottom-0
                     before:w-full before:h-2
-                    before:bg-accent before:opacity-25
+                    before:bg-accent before:opacity-25 
+                    dark:before:opacity-60
                     before:scale-x-0 before:origin-right
-                    before:transition-transform before:duration-300
+                    before:transition-[transform,opacity] before:duration-300
                     before:-z-10
                     ${isDefaultActive ? "before:!scale-x-100 before:!origin-left" : ""}
                   `}
@@ -65,10 +65,7 @@ export function Header() {
             })}
           </nav>
 
-          <div className="flex items-center gap-6">
-            <LanguageToggle />
-            <ThemeToggle />
-          </div>
+          <ThemeSwitcher />
         </div>
       </div>
     </header>

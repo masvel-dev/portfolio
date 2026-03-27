@@ -16,7 +16,7 @@ export function Footer() {
   ];
 
   return(
-    <footer className="border-t border-gray-200">
+    <footer className="border-t border-gray-200 dark:border-white/10 transition-colors duration-300">
       <div className="w-full max-w-6xl mx-auto px-3 flex justify-between items-center py-6">
         <p className="text-sm opacity-80">Kopan.dev &copy; {new Date().getFullYear()}. All rights reserved.</p>
 
@@ -32,7 +32,7 @@ export function Footer() {
                 {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                 whileHover={{ scale: 1.15, y: -2 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                className="text-accent"
+                className="text-accent transition-colors duration-300"
               >
                 {icon}
               </MotionLink>

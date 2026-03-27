@@ -22,7 +22,7 @@ export const skills: Skill[] = [
   { Icon: SiJavascript, label: "JavaScript", color: "#F7DF1E" },
   { Icon: SiTypescript, label: "TypeScript", color: "#3178C6" },
   { Icon: SiReact, label: "React", color: "#61DAFB" },
-  { Icon: SiNextdotjs, label: "Next.js", color: "#000000" },
+  { Icon: SiNextdotjs, label: "Next.js", color: "currentColor" },
   { Icon: SiTailwindcss, label: "Tailwind CSS", color: "#06B6D4" },
   { Icon: SiVite, label: "Vite", color: "#9135FF" },
   { Icon: SiNodedotjs, label: "Node.js", color: "#339933" },

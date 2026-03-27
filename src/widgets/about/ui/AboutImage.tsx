@@ -16,7 +16,7 @@ export function AboutImage() {
       </div>
 
       <motion.svg
-        className="absolute -top-24 -left-12 w-[220px] h-[220px] text-accent"
+        className="absolute -top-24 -left-12 w-[220px] h-[220px] text-accent transition-colors duration-300"
         viewBox="0 0 200 200"
         xmlns="http://www.w3.org/2000/svg"
       >

@@ -39,11 +39,11 @@ const baseClasses =
 
 const styleMap = {
   style1:
-    "bg-gray-100/75 text-accent border border-gray-200/50 hover:bg-accent hover:text-white hover:border-transparent transition-colors",
+    "bg-gray-100/75 dark:bg-white/5 text-accent dark:text-white border border-gray-200/50 dark:border-white/15 hover:!bg-accent hover:!text-white hover:!border-transparent transition-colors",
   style2:
     "bg-accent text-white hover:bg-accent-hover transition-colors",
   style3:
-    "bg-accent text-white hover:scale-105 transition-transform",
+    "bg-accent text-white hover:scale-105 before:transition-[transform,colors]",
 };
 
 export const Button = (props: ButtonProps) => {

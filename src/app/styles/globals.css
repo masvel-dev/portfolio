@@ -13,7 +13,7 @@
   --bg: #0e1531;
   --primary: #fff;
   --accent: #818CF8;
-  --accent-hover: #4F46E5;
+  /* --accent-hover: #4F46E5; */
 }
 
 ::selection {
@@ -29,7 +29,15 @@ body {
   font-family: 'Inter', system-ui, sans-serif;
 }
 
-/* .duration-300 {
+/* .duration-200 {
+  transition-duration: 3s;
+}
+
+.duration-250 {
+  transition-duration: 3s;
+}
+
+.duration-300 {
   transition-duration: 3s;
 } */
 
@@ -53,7 +61,7 @@ body {
     @apply text-sm font-bold tracking-wider text-accent uppercase mb-2 transition-colors duration-300;
   }
   p {
-    @apply text-gray-500;
+    @apply text-gray-500 dark:text-gray-300/80 transition-colors duration-300;
   }
 }
 

@@ -24,8 +24,8 @@ export function Projects() {
 
   return (
     <section ref={ref} className="relative overflow-hidden pt-60 pb-32" id="projects">
-      <span className={`absolute top-0 left-1/2 -translate-x-1/2 
-        text-gray-100/75 text-[20vw]/[.75] font-bold uppercase select-none`}>Projects</span>
+      <span className={`absolute top-0 left-1/2 -translate-x-1/2 transition-colors duration-300
+        text-gray-100/75 dark:text-gray-100/5 text-[20vw]/[.75] font-bold uppercase select-none`}>Projects</span>
 
       <motion.div
         style={{ x: xTop, rotate: "-3deg" }}

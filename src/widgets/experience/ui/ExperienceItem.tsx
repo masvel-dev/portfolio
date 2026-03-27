@@ -9,9 +9,9 @@ export function ExperienceItem({ item }: Props) {
   return (
     <div className="relative flex gap-14">
       <div className="w-1/3">
-        <div className="relative sticky top-28 flex flex-col text-primary font-bold space-y-1 pl-16
+        <div className="relative sticky top-28 flex flex-col font-bold space-y-1 pl-16
           before:content-[''] before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2
-          before:w-[26px] before:h-[26px] before:bg-accent before:rounded-full before:border-4 before:border-white"
+          before:w-[26px] before:h-[26px] before:bg-accent before:rounded-full before:border-4 before:border-bg before:transition-colors before:duration-300"
         >
           <span className="text-3xl">{item.years}</span>
           <span className="text-2xl opacity-75">{item.title}</span>
