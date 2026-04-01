@@ -23,7 +23,7 @@ export function Footer() {
           <p className="text-sm opacity-80 order-2 sm:order-1">Kopan.dev &copy; {new Date().getFullYear()}. All rights reserved.</p>
 
           <div className="flex items-center gap-4 order-1 sm:order-2">
-            <span className="text-gray-500 text-sm opacity-90 after:content-['—'] after:pl-4 hidden sm:block">Get in touch</span>
+            <span className="text-gray-500 dark:text-gray-300/80 transition-colors duration-300 text-sm opacity-90 after:content-['—'] after:pl-4 hidden sm:block">Get in touch</span>
 
             <nav aria-label="Contact links" className="flex gap-4 sm:gap-3">
               {socialLinks.map(({ href, icon, label, isExternal }) => (

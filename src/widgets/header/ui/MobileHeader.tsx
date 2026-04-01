@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 import { Container } from "@/shared/ui/container";
+import { ThemeSwitcher } from "@/shared/ui/theme-switcher/ThemeSwitcher";
 
 import { Logo } from "./Logo";
 
@@ -67,7 +68,7 @@ export const MobileHeader = () => {
                 ease: "easeOut",
                 delay: 0.15,
               }}
-              className="fixed top-6 left-6 text-white z-50"
+              className="fixed top-6 left-6 text-primary z-50 transition-colors duration-300"
             >
               <Logo />
             </motion.div>
@@ -83,10 +84,35 @@ export const MobileHeader = () => {
                 ease: "easeOut",
                 delay: 0.15,
               }}
-              className={`fixed top-9 right-6 text-white z-50 ${MENU_TOGGLE_BUTTON_CLASSES}`}
+              className={`fixed top-9 right-6 text-primary z-50 transition-colors duration-300 ${MENU_TOGGLE_BUTTON_CLASSES}`}
             >
               CLOSE
             </motion.button>
+
+            <motion.div
+              key="theme"
+              initial={{ opacity: 0, y: 10, pointerEvents: "none" }}
+              animate={{ opacity: 1, y: 0, pointerEvents: "auto" }}
+              exit={{ 
+                opacity: 0,
+                y: 10,
+                pointerEvents: "none",
+                transition: {
+                  duration: 0.3,
+                  ease: "easeOut",
+                  delay: 0,
+                },
+              }}
+              transition={{
+                duration: 0.3,
+                ease: "easeOut",
+                delay: 1.15,
+              }}
+              className="fixed bottom-6 left-0 flex justify-center items-center gap-3 w-full text-white z-50"
+            >
+              <span className="text-primary text-sm font-bold transition-colors duration-300">Theme:</span>
+              <ThemeSwitcher />
+            </motion.div>
           </>
         )}
       </AnimatePresence>
@@ -109,7 +135,7 @@ export const MobileHeader = () => {
                 delay: 0.4,
               },
             }}
-            className="fixed top-0 left-0 w-full h-screen bg-accent z-40 flex flex-col"
+            className="fixed top-0 left-0 w-full h-screen bg-stone-200 dark:bg-indigo-900 z-40 flex flex-col transition-colors duration-300"
           >
             <motion.nav
               variants={containerVariants}
@@ -118,7 +144,7 @@ export const MobileHeader = () => {
               exit="exit"
               className="flex-1 flex items-center justify-center"
             >
-              <ul className="flex flex-col items-center gap-6 text-white font-serif text-5xl font-medium uppercase">
+              <ul className="flex flex-col items-center gap-6">
                 {navItems.map((item) => (
                   <NavItem key={item.href} {...item} onClick={() => setIsOpen(false)} />
                 ))}
@@ -139,7 +165,7 @@ const NavItem = ({ label, href, onClick }: { label: string; href: string; onClic
         onClick={onClick}
         variants={itemVariants}
         transition={{ duration: 0.4, ease: "easeOut" }}
-        className="block"
+        className="block font-serif text-5xl font-medium uppercase text-primary transition-colors duration-300"
       >
         {label}
       </motion.a>
