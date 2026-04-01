@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 
-export default function Logo() {
+export function Logo() {
   const letters = "Kopan.dev".split("");
   const controls = useAnimation();
   const [isAnimating, setIsAnimating] = useState(false);
@@ -14,8 +14,8 @@ export default function Logo() {
   };
 
   return (
-    <motion.h1
-      className="text-3xl font-semibold tracking-tight"
+    <motion.div
+      className="font-serif text-3xl font-bold tracking-tight"
       onHoverStart={handleHover}
       style={{
         perspective: 800,
@@ -44,6 +44,6 @@ export default function Logo() {
           {char}
         </motion.span>
       ))}
-    </motion.h1>
+    </motion.div>
   );
 }

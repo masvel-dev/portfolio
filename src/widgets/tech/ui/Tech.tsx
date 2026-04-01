@@ -1,5 +1,7 @@
 import { useMemo } from "react";
 
+import { Container } from "@/shared/ui/container";
+
 import { skills } from "@/entities/skill";
 import type { Skill } from "@/entities/skill";
 
@@ -20,10 +22,14 @@ export function Tech() {
   }, []);
 
   return (
-    <section className="max-w-4xl mx-auto px-3 flex flex-wrap justify-center gap-10 pt-24">
-      {animatedSkills.map((skill) => (
-        <SkillItem key={skill.label} {...skill} />
-      ))}
+    <section className="pt-16 sm:pt-20 md:pt-24">
+      <Container>
+        <div className="max-w-4xl mx-auto flex flex-wrap justify-center gap-8 sm:gap-10">
+          {animatedSkills.map((skill) => (
+            <SkillItem key={skill.label} {...skill} />
+          ))}
+        </div>
+      </Container>
     </section>
   );
 }

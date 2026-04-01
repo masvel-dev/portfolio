@@ -43,7 +43,7 @@ export const experience: Experience[] = [
     ],
     tech: {
       primary: ["HTML", "CSS"],
-      experience: ["Email Development (table-based HTML)", "Drupal 7"]
+      experience: ["Email Development (table-based)", "Drupal 7"]
     }
   }
 ];

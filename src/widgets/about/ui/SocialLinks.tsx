@@ -42,7 +42,7 @@ const socialLinks = [
 
 export function SocialLinks() {
   return (
-    <div className="flex flex-wrap gap-3 mt-8">
+    <div className="flex flex-wrap gap-x-3 gap-y-6 mt-8">
       {socialLinks.map((btn, index) => (
         <Button key={index} {...btn} />
       ))}

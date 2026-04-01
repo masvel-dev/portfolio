@@ -2,9 +2,20 @@ import { useState } from "react";
 import toast from 'react-hot-toast';
 import emailjs from "@emailjs/browser";
 
+import { contacts } from "@/shared/config/contacts";
+import { Container } from "@/shared/ui/container";
+
 import { Blurs } from "./Blurs";
 import { InputField } from "./InputField";
-import { contacts } from "@/shared/config/contacts";
+
+type FormData = {
+  from_name: string;
+  from_email: string;
+  message: string;
+  botcheck: string;
+};
+
+type FormErrors = Partial<Record<keyof FormData, string>>;
 
 const INITIAL_FORM = {
   from_name: "",
@@ -14,11 +25,11 @@ const INITIAL_FORM = {
 };
 
 export function Contact() {
-  const [formData, setFormData] = useState(INITIAL_FORM);
-  const [errors, setErrors] = useState({});
+  const [formData, setFormData] = useState<FormData>(INITIAL_FORM);
+  const [errors, setErrors] = useState<FormErrors>({});
   const [loading, setLoading] = useState(false);
 
-  const validateField = (name, value) => {
+  const validateField = (name: keyof FormData, value: string): string => {
     switch (name) {
       case "from_name":
         return value.trim() ? "" : "Name is required";
@@ -36,15 +47,15 @@ export function Contact() {
     }
   };
 
-  const validateForm = () => {
-    const fields = ["from_name", "from_email", "message"];
-    const newErrors = {};
-
+  const validateForm = (): FormErrors => {
+    const fields: (keyof FormData)[] = ["from_name", "from_email", "message"];
+    const newErrors: FormErrors = {};
+  
     fields.forEach((key) => {
       const error = validateField(key, formData[key]);
       if (error) newErrors[key] = error;
     });
-
+  
     return newErrors;
   };
 
@@ -57,16 +68,22 @@ export function Contact() {
     return emailjs.send("service_vhvkdpb", "template_9u86bp1", formData, "Z029k2YwelvkZonwv");
   };
 
-  const handleChange = ({ target: { name, value } }) => {
-    setFormData((prev) => ({ ...prev, [name]: value }));
-
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+  
+    const key = name as keyof FormData;
+  
+    setFormData((prev) => ({ ...prev, [key]: value }));
+  
     setErrors((prev) => ({
       ...prev,
-      [name]: validateField(name, value),
+      [key]: validateField(key, value),
     }));
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (formData.botcheck) {
@@ -99,14 +116,14 @@ export function Contact() {
     <section className="relative overflow-hidden" id="contact">
       <Blurs />
 
-      <div className="max-w-6xl mx-auto px-3">
-        <div className="max-w-3xl mx-auto text-center mb-8">
+      <Container>
+        <div className="max-w-2xl mx-auto text-center mb-8">
           <h6>Let's Work Together</h6>
           <h2 className="mb-6">Contact Me</h2>
           <p>Have a project in mind or just want to say hello? Feel free to reach out. I'm always open to discussing new ideas, collaborations, or opportunities.</p>
         </div>
 
-        <div className="max-w-xl mx-auto p-10 pt-6 bg-white dark:bg-white/5 backdrop-blur-xl rounded-xl border border-gray-100 dark:border-white/10 shadow-lg space-y-8 relative z-10 transition-all duration-300">
+        <div className="max-w-xl mx-auto p-6 sm:p-10 pt-6 bg-white dark:bg-white/5 backdrop-blur-xl rounded-xl border border-gray-100 dark:border-white/10 shadow-lg space-y-8 relative z-10 transition-colors duration-300">
           <form noValidate onSubmit={handleSubmit} className="space-y-6">
             <InputField
               label="Your Name"
@@ -151,11 +168,11 @@ export function Contact() {
           </form>
         </div>
 
-        <p className="text-sm text-center py-6">Or email me at:{" "}<a
+        <p className="text-sm font-mdeium text-center py-6">Or email me at:{" "}<a
           href={`mailto:${contacts.email}`}
           className="text-accent underline hover:no-underline transition-colors duration-300"
         >{contacts.email}</a></p>
-      </div>
+      </Container>
     </section>
   );
 }

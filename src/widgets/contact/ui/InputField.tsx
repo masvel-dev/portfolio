@@ -41,7 +41,7 @@ export function InputField({
 
       <label
         htmlFor={name}
-        className={`absolute left-0 text-gray-400 dark:text-gray-300/80 font-medium pointer-events-none transition-colors duration-150
+        className={`absolute left-0 text-gray-400 dark:text-gray-300/80 font-medium pointer-events-none transition-all duration-150
           transition-all duration-150 peer-focus:-top-2 peer-focus:text-xs
           ${value ? "-top-2 text-xs" : "top-3 text-sm"}`}
       >

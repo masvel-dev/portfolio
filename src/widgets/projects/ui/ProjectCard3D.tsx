@@ -22,7 +22,7 @@ export function ProjectCard3D({ project }: ProjectCard3DProps) {
           style={{ backgroundColor: project.bg, color: project.color }}
         >
           <h4>{project.title}</h4>
-          <p className="mt-2 !text-current">Key Features:</p>
+          <p className="mt-2 !text-current text-sm font-medium">Key Features:</p>
           <ul className="mt-2 list-disc list-inside text-sm">
             {(project.description || []).map((item, index) => (
               <li key={index}>{item}</li>

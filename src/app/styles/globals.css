@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Space+Grotesk:wght@300..700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -13,7 +15,6 @@
   --bg: #0e1531;
   --primary: #fff;
   --accent: #818CF8;
-  /* --accent-hover: #4F46E5; */
 }
 
 ::selection {
@@ -26,43 +27,32 @@ html {
 }
 
 body {
-  font-family: 'Inter', system-ui, sans-serif;
+  @apply font-sans;
 }
 
-/* .duration-200 {
-  transition-duration: 3s;
+h1, h2, h3, h4 {
+  @apply font-serif;
 }
-
-.duration-250 {
-  transition-duration: 3s;
+h1 {
+  @apply text-4xl sm:text-5xl font-semibold leading-none;
 }
-
-.duration-300 {
-  transition-duration: 3s;
-} */
-
-@layer base {
-  h1 {
-    @apply text-5xl font-medium leading-tight;
-  }
-  h2 {
-    @apply text-4xl font-bold leading-tight;
-  }
-  h3 {
-    @apply text-2xl font-bold;
-  }
-  h4 {
-    @apply text-xl font-bold;
-  }
-  h5 {
-    @apply text-lg font-bold;
-  }
-  h6 {
-    @apply text-sm font-bold tracking-wider text-accent uppercase mb-2 transition-colors duration-300;
-  }
-  p {
-    @apply text-gray-500 dark:text-gray-300/80 transition-colors duration-300;
-  }
+h2 {
+  @apply text-3xl sm:text-4xl font-bold leading-tight;
+}
+h3 {
+  @apply text-2xl font-bold;
+}
+h4 {
+  @apply text-xl font-bold;
+}
+h5 {
+  @apply text-lg font-bold;
+}
+h6 {
+  @apply text-sm font-bold tracking-wider text-accent uppercase mb-2 transition-colors duration-300;
+}
+p {
+  @apply text-gray-500 dark:text-gray-300/80 transition-colors duration-300;
 }
 
 #projects {
@@ -103,4 +93,26 @@ body {
     justify-content: center;
     transform: rotateX(-90deg) translateZ(112px);
   }
+}
+
+.swiper {
+  --swiper-pagination-color: var(--accent);
+  --swiper-pagination-bottom: auto;
+  @apply [--swiper-pagination-top:51.5vw] md:[--swiper-pagination-top:37.35vw] lg:[--swiper-pagination-top:28vw];
+}
+.dark .swiper {
+  --swiper-pagination-bullet-inactive-color: #fff;
+  --swiper-pagination-bullet-inactive-opacity: .4;
+}
+.swiper-slide .context {
+  transition: opacity .5s ease;
+}
+.swiper-slide:not(.swiper-slide-next) .context {
+  opacity: 0;
+}
+.swiper-pagination-bullet {
+  @apply rounded-md transition-all duration-300;
+}
+.swiper-pagination-bullet-active {
+  @apply w-5;
 }

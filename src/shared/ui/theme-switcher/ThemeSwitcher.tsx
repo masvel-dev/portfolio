@@ -9,7 +9,7 @@ export function ThemeSwitcher() {
   return(
     <button
       onClick={toggleTheme}
-      className="relative flex items-center w-14 h-8 bg-gray-800 dark:bg-gray-600/80 rounded-full p-1 transition-colors duration-300 outline-none"
+      className="relative flex items-center w-14 h-8 bg-gray-800 dark:bg-blue-600/90 rounded-full p-1 transition-colors duration-300 outline-none"
     >
       <IoSunnySharp size={16} className="absolute left-2 text-yellow-500" />
       <IoMoonSharp size={16} className="absolute right-2 text-blue-400" />

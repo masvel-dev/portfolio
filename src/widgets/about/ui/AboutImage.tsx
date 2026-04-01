@@ -4,8 +4,8 @@ import workspace from "../assets/workspace.jpg";
 
 export function AboutImage() {
   return(
-    <div className="flex-1 relative">
-      <div className={`relative rounded-2xl overflow-hidden shadow-lg 
+    <div className="relative flex-1 order-2 md:order-none">
+      <div className={`relative max-w-fit md:w-full rounded-2xl overflow-hidden shadow-lg mx-auto
         before:content-[''] before:absolute before:inset-0 before:bg-gradient-to-t before:from-black/50 before:to-transparent`}>
         <img src={workspace} alt="Workspace" />
         
@@ -16,7 +16,7 @@ export function AboutImage() {
       </div>
 
       <motion.svg
-        className="absolute -top-24 -left-12 w-[220px] h-[220px] text-accent transition-colors duration-300"
+        className="absolute -top-24 -left-12 w-48 md:w-56 text-accent transition-colors duration-300"
         viewBox="0 0 200 200"
         xmlns="http://www.w3.org/2000/svg"
       >

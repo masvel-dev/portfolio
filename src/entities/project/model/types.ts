@@ -1,7 +1,7 @@
 export interface Project {
-  title: string;
   image: string;
-  bg: string;
-  color: string;
+  title: string;
   description: string[];
+  bg?: string;
+  color?: string;
 }
