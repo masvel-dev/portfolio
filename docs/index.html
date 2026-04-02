@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kopan.dev | Portfolio website</title>
+    <script type="module" crossorigin src="/assets/index-C3a7aRRq.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-D_IrwDdS.css">
+  </head>
+  <body>
+
+    <style>
+      html {
+        background-color: #fff;
+        color: #111827;
+      }
+    </style>
+
+    <script>
+      const e = localStorage.getItem("theme");
+      const t = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      if (e === "dark" || (!e && t)) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
+
+    <div id="root"></div>
+  </body>
+</html>
