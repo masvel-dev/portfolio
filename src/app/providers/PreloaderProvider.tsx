@@ -18,7 +18,12 @@ export const PreloaderProvider = ({
 
   return (
     <>
-      {!isFinished && <Preloader isReady={isAppReady} onFinish={() => setIsFinished(true)} />}
+      {!isFinished && (
+        <Preloader
+          isReady={isAppReady}
+          onFinish={() => setIsFinished(true)}
+        />
+      )}
       {children}
     </>
   );

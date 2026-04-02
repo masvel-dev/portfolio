@@ -1,19 +1,11 @@
 import { Link as ScrollLink } from "react-scroll";
 
-import { useHeaderScroll } from "../model/useHeaderScroll";
-
 import { Container } from "@/shared/ui/container";
 import { ThemeSwitcher } from "@/shared/ui/theme-switcher/ThemeSwitcher";
 
+import { useHeaderScroll } from "../model/useHeaderScroll";
+import { navLinks } from "../config/navLinks";
 import { Logo } from "./Logo";
-
-const links = [
-  { to: "home", label: "Home" },
-  { to: "about", label: "About" },
-  { to: "experience", label: "Experience" },
-  { to: "projects", label: "Projects" },
-  { to: "contact", label: "Contact" },
-];
 
 export function DesktopHeader() {
   const { scrollY, direction } = useHeaderScroll();
@@ -21,7 +13,8 @@ export function DesktopHeader() {
   const isTop = scrollY < 50;
   const isHidden = direction === "down" && scrollY > 100;
 
-  const base = "fixed top-0 left-0 w-full lg:pr-[var(--scrollbar-width)] z-50 transition-[transform,background-color,box-shadow,backdrop-filter] duration-300 transform-gpu will-change-transform";
+  const base =
+    "fixed top-0 left-0 w-full lg:pr-[var(--scrollbar-width)] z-50 transition-[transform,background-color,box-shadow,backdrop-filter] duration-300 transform-gpu will-change-transform";
   const transform = isHidden ? "-translate-y-full" : "translate-y-0";
   const style = isTop ? "bg-transparent shadow-none" : "bg-white/85 dark:bg-[#121a3a]/80 backdrop-blur-md shadow-md dark:shadow-black/30";
 
@@ -36,13 +29,13 @@ export function DesktopHeader() {
           <div className="flex items-center gap-6">
             <nav>
               <ul className="flex items-center gap-6">
-                {links.map(({ to, label }, i) => {
+                {navLinks.map(({ id, label }, i) => {
                   const isDefaultActive = isTop && i === 0;
 
                   return (
-                    <li key={to}>
+                    <li key={id}>
                       <ScrollLink
-                        to={to}
+                        to={id}
                         smooth
                         duration={500}
                         spy

@@ -1,73 +1,56 @@
-# React + TypeScript + Vite
+# Portfolio Landing Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## About
 
-Currently, two official plugins are available:
+This project is a personal portfolio landing page built with React.
+It showcases my skills, projects, and contact information in a clean and modern interface.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The main goal of this project was to create a responsive, animated, and well-structured portfolio using modern frontend technologies and scalable architecture.
 
-## React Compiler
+## Live Demo
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+https://github.com/masvel-dev/portfolio
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+* React (TSX)
+* Tailwind CSS
+* Framer Motion
+* Feature-Sliced Design (FSD)
+* Vite
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Features
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+* Responsive and adaptive layout
+* Smooth scrolling navigation
+* Contact form with validation and submission
+* Animated UI elements (Framer Motion)
+* Feature-Sliced Design (FSD) architecture
+* Reusable UI components
+* Custom React hooks
+* Code splitting and performance optimization
+* Conditional rendering for different screen sizes
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Project Structure
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+The project follows Feature-Sliced Design (FSD) architecture:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+src/
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+* app
+* pages
+* widgets
+* entities
+* shared
+
+## Contact
+
+If you'd like to get in touch, feel free to reach out via the contact form on the website
+or through my social links.
+
+## Author
+
+Kopan Alexander
+Frontend Developer
+
+© 2026

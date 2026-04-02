@@ -4,15 +4,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Container } from "@/shared/ui/container";
 import { ThemeSwitcher } from "@/shared/ui/theme-switcher/ThemeSwitcher";
 
+import { navLinks } from "../config/navLinks";
+import { NavItem } from "./NavItem";
 import { Logo } from "./Logo";
-
-const navItems = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Experience", href: "#experience" },
-  { label: "Projects", href: "#projects" },
-  { label: "Contact", href: "#contact" },
-];
 
 const MENU_TOGGLE_BUTTON_CLASSES = `
   text-sm font-semibold leading-none before:content-[''] before:absolute before:w-12 before:h-12
@@ -33,12 +27,6 @@ const containerVariants = {
       staggerDirection: -1,
     },
   },
-};
-
-const itemVariants = {
-  hidden: { y: "100%", opacity: 0 },
-  visible: { y: 0, opacity: 1 },
-  exit: { y: "100%", opacity: 0 },
 };
 
 export const MobileHeader = () => {
@@ -145,8 +133,8 @@ export const MobileHeader = () => {
               className="flex-1 flex items-center justify-center"
             >
               <ul className="flex flex-col items-center gap-6">
-                {navItems.map((item) => (
-                  <NavItem key={item.href} {...item} onClick={() => setIsOpen(false)} />
+                {navLinks.map((item) => (
+                  <NavItem key={item.id} {...item} onClick={() => setIsOpen(false)} />
                 ))}
               </ul>
             </motion.nav>
@@ -154,21 +142,5 @@ export const MobileHeader = () => {
         )}
       </AnimatePresence>
     </>
-  );
-};
-
-const NavItem = ({ label, href, onClick }: { label: string; href: string; onClick?: () => void }) => {
-  return (
-    <li className="overflow-hidden">
-      <motion.a
-        href={href}
-        onClick={onClick}
-        variants={itemVariants}
-        transition={{ duration: 0.4, ease: "easeOut" }}
-        className="block font-serif text-5xl font-medium uppercase text-primary transition-colors duration-300"
-      >
-        {label}
-      </motion.a>
-    </li>
   );
 };
