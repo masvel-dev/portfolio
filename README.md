@@ -9,7 +9,7 @@ The main goal of this project was to create a responsive, animated, and well-str
 
 ## Live Demo
 
-https://github.com/masvel-dev/portfolio
+https://masvel-dev.github.io/portfolio
 
 ## Tech Stack
 
