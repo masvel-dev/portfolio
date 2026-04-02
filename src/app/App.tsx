@@ -2,6 +2,7 @@ import { Toaster } from "react-hot-toast";
 
 import { Header, Footer } from "@/widgets";
 import { HomePage } from "@/pages/home/ui/HomePage";
+
 import { PreloaderProvider } from "./providers/PreloaderProvider";
 
 export default function App() {
@@ -11,9 +12,7 @@ export default function App() {
         <Toaster position="top-center" reverseOrder={false} />
 
         <Header />
-
         <HomePage />
-
         <Footer />
       </div>
     </PreloaderProvider>

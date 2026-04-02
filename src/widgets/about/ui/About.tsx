@@ -1,4 +1,5 @@
 import { Container } from "@/shared/ui/container";
+
 import { AboutImage } from "./AboutImage";
 import { SocialLinks } from "./SocialLinks"
 

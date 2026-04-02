@@ -14,8 +14,9 @@ export function ThemeSwitcher() {
       <IoSunnySharp size={16} className="absolute left-2 text-yellow-500" />
       <IoMoonSharp size={16} className="absolute right-2 text-blue-400" />
 
-      <span className={`w-6 h-6 bg-white rounded-full shadow-md transform transition-transform duration-300 z-10
-        ${isDark ? "translate-x-6" : "translate-x-0"}`}></span>
+      <span className={`
+        w-6 h-6 bg-white rounded-full shadow-md transform transition-transform duration-300 z-10 ${isDark ? "translate-x-6" : "translate-x-0"}
+      `}></span>
     </button>
   );
 }

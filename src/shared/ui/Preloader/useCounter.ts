@@ -1,4 +1,8 @@
 import { useEffect, useRef, useState } from "react";
+import { PRELOADER_CONFIG } from "./config";
+
+const getRandom = ([min, max]: number[]) =>
+  Math.floor(Math.random() * (max - min)) + min;
 
 export const useCounter = (isReady: boolean) => {
   const [count, setCount] = useState(0);
@@ -11,33 +15,30 @@ export const useCounter = (isReady: boolean) => {
       let next = countRef.current;
 
       if (!isReady) {
-        if (next < 80) {
-          const jump = Math.floor(Math.random() * 6) + 2;
-          next += jump;
+        if (next < PRELOADER_CONFIG.COUNTER.SLOW_LIMIT) {
+          next += getRandom(PRELOADER_CONFIG.COUNTER.SLOW_JUMP);
         }
       } else {
-        const jump = Math.floor(Math.random() * 20) + 10;
-        next += jump;
+        next += getRandom(PRELOADER_CONFIG.COUNTER.FAST_JUMP);
       }
 
-      if (!isReady && next > 85) {
-        next = 85;
+      if (!isReady && next > PRELOADER_CONFIG.COUNTER.SOFT_CAP) {
+        next = PRELOADER_CONFIG.COUNTER.SOFT_CAP;
       }
 
-      next = Math.min(next, 100);
+      next = Math.min(next, PRELOADER_CONFIG.COUNTER.MAX);
 
       if (next !== countRef.current) {
         countRef.current = next;
         setCount(next);
       }
 
-      if (next < 100) {
+      if (next < PRELOADER_CONFIG.COUNTER.MAX) {
         raf = requestAnimationFrame(update);
       }
     };
 
     raf = requestAnimationFrame(update);
-
     return () => cancelAnimationFrame(raf);
   }, [isReady]);
 
