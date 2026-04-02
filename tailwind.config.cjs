@@ -18,8 +18,8 @@ module.exports = {
         "accent-hover": "var(--accent-hover)",
       },
       backgroundImage: {
-        "hero-light": "url('/hero-bg-light.jpg')",
-        "hero-dark": "url('/hero-bg-dark.jpg')",
+        "hero-light": "url('/hero-bg-light.webp')",
+        "hero-dark": "url('/hero-bg-dark.webp')",
       },
       keyframes: {
         breathe: {

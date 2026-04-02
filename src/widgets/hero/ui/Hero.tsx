@@ -6,7 +6,7 @@ import { HeroWave } from "./HeroWave";
 import { HeroTechStack } from "./HeroTechStack";
 import { HeroStats } from "./HeroStats";
 
-import character from "../assets/character.png";
+import character from "../assets/character.webp";
 
 export function Hero() {
   return (
