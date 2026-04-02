@@ -50,7 +50,7 @@ or through my social links.
 
 ## Author
 
-Kopan Alexander
+Kopan Alexander  
 Frontend Developer
 
 © 2026
