@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-import workspace from "../assets/workspace.jpg";
+import workspace from "../assets/workspace.webp";
 
 export function AboutImage() {
   return(

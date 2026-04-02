@@ -130,7 +130,7 @@ export const MobileHeader = () => {
               initial="hidden"
               animate="visible"
               exit="exit"
-              className="flex-1 flex items-center justify-center"
+              className="flex items-center justify-center h-dvh"
             >
               <ul className="flex flex-col items-center gap-6">
                 {navLinks.map((item) => (
