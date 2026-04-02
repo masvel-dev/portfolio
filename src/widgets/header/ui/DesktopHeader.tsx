@@ -21,9 +21,11 @@ export function DesktopHeader() {
   const isTop = scrollY < 50;
   const isHidden = direction === "down" && scrollY > 100;
 
-  const base = "fixed top-0 left-0 w-full z-50 transition-[transform,background-color,box-shadow,backdrop-filter] duration-300 transform-gpu will-change-transform"; // pr-[var(--scrollbar-width)]
+  const base = "fixed top-0 left-0 w-full lg:pr-[var(--scrollbar-width)] z-50 transition-[transform,background-color,box-shadow,backdrop-filter] duration-300 transform-gpu will-change-transform";
   const transform = isHidden ? "-translate-y-full" : "translate-y-0";
   const style = isTop ? "bg-transparent shadow-none" : "bg-white/85 dark:bg-[#121a3a]/80 backdrop-blur-md shadow-md dark:shadow-black/30";
+
+  const activeLinkClasses = "before:!scale-x-100 before:!origin-right"
 
   return (
     <header className={`${base} ${transform} ${style}`}>
@@ -45,13 +47,13 @@ export function DesktopHeader() {
                         duration={500}
                         spy
                         hashSpy
-                        activeClass="before:!scale-x-100 before:!origin-left"
+                        activeClass={activeLinkClasses}
                         className={`
                           relative text-sm font-semibold uppercase cursor-pointer hover:text-accent transition-colors duration-200
                           before:content-[''] before:absolute before:left-1 before:-bottom-0.5 before:-z-10
                           before:w-full before:h-2 before:bg-accent before:opacity-25 dark:before:opacity-60
-                          before:scale-x-0 before:origin-right before:transition-[transform,opacity] before:duration-300
-                          ${isDefaultActive ? "before:!scale-x-100 before:!origin-left" : ""}
+                          before:scale-x-0 before:origin-left before:transition-[transform,opacity] before:duration-300
+                          ${isDefaultActive ? activeLinkClasses : ""}
                         `}
                       >
                         {label}

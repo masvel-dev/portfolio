@@ -13,21 +13,7 @@
         background-color: #fff;
         color: #111827;
       }
-      html.dark {
-        background-color: #0e1531;
-        color: #fff;
-      }
     </style>
-
-    <script>
-      const e = localStorage.getItem("theme");
-      const t = window.matchMedia("(prefers-color-scheme: dark)").matches;
-      if (e === "dark" || (!e && t)) {
-        document.documentElement.classList.add("dark");
-      } else {
-        document.documentElement.classList.remove("dark");
-      }
-    </script>
 
     <div id="root"></div>
     <script type="module" src="/src/app/main.tsx"></script>
